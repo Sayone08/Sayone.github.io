@@ -1,0 +1,7 @@
+baseURL = "/"
+locale = "en-US"
+title = "Sayone Dey | Lecturer, Researcher & AI Educator"
+disableKinds = ["taxonomy", "term", "RSS"]
+
+[params]
+  description = "The personal portfolio of Sayone Dey, a lecturer, coding instructor and AI/ML researcher."

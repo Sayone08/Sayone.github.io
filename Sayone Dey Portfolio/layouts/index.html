@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ .Site.Params.description }}">
+  <title>{{ .Site.Title }}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  {{ $style := resources.Get "css/main.css" | resources.Minify }}
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+  {{ $theme := resources.Get "css/theme.css" | resources.Minify }}
+  <link rel="stylesheet" href="{{ $theme.RelPermalink }}">
+  {{ $script := resources.Get "js/main.js" | resources.Minify }}
+</head>
+<body>
+  <button class="menu-toggle" type="button" aria-controls="site-sidebar" aria-expanded="false">
+    <span></span><span></span><span></span>
+    <span class="sr-only">Open navigation</span>
+  </button>
+
+  <aside class="sidebar" id="site-sidebar">
+    <div class="sidebar-inner">
+      <a class="brand" href="#top" aria-label="Sayone Dey home">
+        <span class="brand-mark">SD</span>
+        <span>Sayone Dey</span>
+      </a>
+      <div class="sidebar-profile">
+        <img src="/images/sayone-dey.jpg" alt="Portrait of Sayone Dey">
+        <p>Lecturer · Researcher<br>AI &amp; Data Science</p>
+      </div>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="nav-link active" href="#top"><span>01</span> Home</a>
+        <a class="nav-link" href="#about"><span>02</span> About</a>
+        <a class="nav-link" href="#experience"><span>03</span> Experience</a>
+        <a class="nav-link" href="#research"><span>04</span> Research</a>
+        <a class="nav-link" href="#skills"><span>05</span> Skills</a>
+        <a class="nav-link" href="#contact"><span>06</span> Contact</a>
+      </nav>
+      <div class="sidebar-footer">
+        <a href="mailto:262-25-005@diu.edu.bd">262-25-005@diu.edu.bd</a>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/sayonedey/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+          <span>© {{ now.Year }}</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <main class="main-content" id="top">
+    <section class="hero section">
+      <div class="eyebrow reveal">Portfolio / 2026</div>
+      <div class="hero-grid">
+        <div class="hero-copy reveal">
+          <p class="kicker">Hello, I’m Sayone.</p>
+          <h1>Teaching minds.<br><em>Building intelligence.</em></h1>
+          <p class="hero-lead">Lecturer, coding instructor, and AI/ML researcher exploring how technology can make learning and everyday life more meaningful.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#contact">Let’s connect <span>↗</span></a>
+            <a class="button button-ghost" href="/Sayone-Dey-CV.pdf" download>Download CV <span>↓</span></a>
+          </div>
+        </div>
+        <div class="hero-visual reveal">
+          <div class="portrait-frame">
+            <img src="/images/sayone-dey.jpg" alt="Sayone Dey">
+            <span class="portrait-tag">Dhaka / Bangladesh</span>
+          </div>
+          <div class="orbit-note">CURIOUS<br>BY NATURE<span>✳</span></div>
+        </div>
+      </div>
+      <div class="scroll-hint"><span></span> Scroll to explore</div>
+    </section>
+
+    <section class="section split-section" id="about">
+      <div class="section-label"><span>02</span> About me</div>
+      <div class="section-body">
+        <h2>Where education<br>meets <em>innovation.</em></h2>
+        <div class="about-columns">
+          <p>I am a lecturer in the Department of Software Engineering at Daffodil International University, where I teach programming, data structures, and computer fundamentals.</p>
+          <p>Alongside teaching, I work as a coding instructor for learners aged 7–18 and pursue an M.Sc. in Computer Science and Engineering with a major in Data Science. I earned a 4.00 CGPA in the first semester, and my second semester is currently ongoing. My work sits at the intersection of thoughtful education and applied artificial intelligence.</p>
+        </div>
+        <div class="stats">
+          <div><strong>3.97</strong><span>B.Sc. GPA / 4.00</span></div>
+          <div><strong>4.00</strong><span>M.Sc. CGPA / 1st semester</span></div>
+          <div><strong>6.5</strong><span>IELTS score</span></div>
+          <div><strong>04+</strong><span>Research papers</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="section-label"><span>03</span> Experience</div>
+      <div class="section-body">
+        <h2>Making an impact,<br><em>one lesson at a time.</em></h2>
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-date">Jan 2026 — Present</div>
+            <div><h3>Lecturer</h3><p class="company">Daffodil International University</p><p>Teaching Structured Programming, Data Structures, and Computer Fundamentals through theory and practical implementation.</p></div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-date">Sep 2025 — Present</div>
+            <div><h3>Coding Instructor</h3><p class="company">Learnix Academy</p><p>Delivering interactive sessions in Scratch, Python, Machine Learning, AI, and web design for local and international students.</p></div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-date">Aug 2024 — Jan 2025</div>
+            <div><h3>Undergraduate Teaching Assistant</h3><p class="company">Daffodil International University</p><p>Supported courses in Data Communication and Computer Architecture, supervised students, and assessed assignments.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="research">
+      <div class="section-label"><span>04</span> Research &amp; work</div>
+      <div class="section-body">
+        <h2>Curiosity with<br><em>real-world purpose.</em></h2>
+        <div class="feature-card">
+          <div class="feature-number">01</div>
+          <div><p class="card-label">Featured thesis</p><h3>A Smart Multi-Plant Disease Detection System</h3><p>Compared four CNN models and an SVM model, then deployed the best-performing approach through a user-friendly website and WhatsApp chatbot with disease prevention guidance.</p><span class="card-arrow">↗</span></div>
+        </div>
+        <div class="publication-list">
+          <p class="card-label">Selected publications · accepted / in publishing queue</p>
+          <a href="#contact"><span>02</span> Explainable AI Driven Prediction for Betel Leaf Disease Classification using Grad-CAM <b>↗</b></a>
+          <a href="#contact"><span>03</span> Deep CNNs for Olive Leaf Disease Classification: A Performance Study <b>↗</b></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="section-label"><span>05</span> Skills</div>
+      <div class="section-body">
+        <h2>Tools for turning<br>ideas into <em>action.</em></h2>
+        <div class="skill-grid">
+          <div><p class="card-label">Programming</p><p class="skill-list">Python <i>·</i> C <i>·</i> C++ <i>·</i> Java<br>HTML5 <i>·</i> CSS3 <i>·</i> JavaScript</p></div>
+          <div><p class="card-label">AI &amp; data</p><p class="skill-list">Machine Learning <i>·</i> Deep Learning<br>Data preprocessing <i>·</i> Model evaluation</p></div>
+          <div><p class="card-label">Tools</p><p class="skill-list">MySQL <i>·</i> MS Office <i>·</i> Figma<br>Canva <i>·</i> Google Suite</p></div>
+          <div><p class="card-label">Beyond code</p><p class="skill-list">Communication <i>·</i> Leadership<br>Teamwork <i>·</i> Adaptability</p></div>
+        </div>
+        <div class="award-strip"><span>Recognition</span><strong>Best Teaching Award · Ranked 1st in Bachelor of CSE · 2nd Runner Up, Unlock the Algorithm</strong></div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="section-label"><span>06</span> Contact</div>
+      <div class="section-body">
+        <p class="kicker">Have an idea?</p>
+        <h2>Let’s make something<br><em>worth learning from.</em></h2>
+        <a class="email-link" href="mailto:262-25-005@diu.edu.bd">262-25-005@diu.edu.bd <span>↗</span></a>
+        <form class="contact-form" id="contact-form">
+          <div class="form-row">
+            <label>Name<input name="name" type="text" required autocomplete="name" placeholder="Your name"></label>
+            <label>Email<input name="email" type="email" required autocomplete="email" placeholder="you@example.com"></label>
+          </div>
+          <label>Message<textarea name="message" required rows="3" placeholder="Tell me about your idea"></textarea></label>
+          <button class="button button-primary" type="submit">Send via Go API <span>↗</span></button>
+          <p class="form-status" id="form-status" role="status"></p>
+        </form>
+        <div class="contact-bottom"><span>Based in Bangladesh</span><a href="https://www.linkedin.com/in/sayonedey/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="/Sayone-Dey-CV.pdf" download>CV ↓</a></div>
+      </div>
+    </section>
+    <footer><span>Designed &amp; built with intention.</span><span>Sayone Dey / Portfolio 2026</span></footer>
+  </main>
+  <script src="{{ $script.RelPermalink }}"></script>
+</body>
+</html>

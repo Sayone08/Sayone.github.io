@@ -1,0 +1,60 @@
+
+name: Deploy Hugo Portfolio
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: "Sayone Dey Portfolio"
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.147.9'
+          extended: true
+
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Build website
+        run: hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}"
+
+      - name: Upload website
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "Sayone Dey Portfolio/public"
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy website
+        id: deployment
+        uses: actions/deploy-pages@v4
